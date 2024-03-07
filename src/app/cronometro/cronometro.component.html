@@ -1,0 +1,17 @@
+<main>
+  <div class="cronometro">
+    <h1>{{ horas | number : "2.0" }}:{{ minutos | number : "2.0" }}:{{ segundos | number : "2.0" }}</h1>
+    <button mat-raised-button color="primary" (click)="pausar()">Pausa</button>
+    <button mat-raised-button color="primary" (click)="iniciar()">Play</button><br>
+    <button mat-raised-button color="primary" (click)="recordar()">Record</button>
+    <!-- <div *ngFor="let registro of registros">
+      {{ registro.minutos | number : "2.0" }}:{{ registro.segundos | number : "2.0" }}
+    </div> -->
+    <app-lapsos
+      [registros]="registros"
+    >
+
+    </app-lapsos>
+  </div>
+  <button class="botonVolver" mat-raised-button color="warn" [routerLink]="['/']">Volver</button>
+</main>
